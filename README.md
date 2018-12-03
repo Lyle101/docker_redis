@@ -50,6 +50,18 @@ docker run \
 -d redis:3.2 redis-server /etc/redis/redis.conf
 ```
 
+* 使用 `host模式` 创建并运行一个名为 myredis 的容器
+
+```sh
+docker run \
+--network host \
+-v $PWD/data:/data \
+-v $PWD/conf/redis.conf:/etc/redis/redis.conf \
+--privileged=true \
+--name myredis \
+-d redis:3.2 redis-server /etc/redis/redis.conf
+```
+
 * 命令分解
 
 ```sh
